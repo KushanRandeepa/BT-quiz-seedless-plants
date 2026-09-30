@@ -138,42 +138,6 @@
       font-size: 5rem;
   }
 
-  .ex-card {
-      cursor: pointer;
-      border: 0;
-      border-radius: 1rem;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
-      width: 100%;
-      text-align: center;
-      transition: transform .15s;
-      color: var(--deep);
-  }
-
-  .ex-card:hover,
-  .ex-card:focus-visible {
-      transform: translateY(-6px);
-      outline: 4px solid var(--sun);
-  }
-
-  .ex-card .t {
-      background: var(--mist);
-      padding: 1rem;
-  }
-
-  .ex-card .n {
-      font-family: 'Fraunces', serif;
-      font-weight: 900;
-      font-size: 2.2rem;
-      padding: .8rem .5rem .2rem;
-  }
-
-  .ex-card .g {
-      padding: 0 .5rem 1rem;
-      font-size: 1.2rem;
-      color: #555;
-  }
 
   .modal-content {
       font-size: 1.5rem;
