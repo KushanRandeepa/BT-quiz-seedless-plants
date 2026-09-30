@@ -1,0 +1,104 @@
+:root {
+    --moss: #2f5d3a;
+    --deep: #12261a;
+    --mist: #eaf3e4;
+    --sun: #f6c744;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: linear-gradient(160deg, var(--deep), var(--moss));
+    min-height: 100vh;
+    color: var(--deep);
+    font-size: 1.6rem;
+}
+
+h1,
+h2,
+.brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+
+.topbar {
+    background: rgba(0, 0, 0, .35);
+    padding: .6rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.qcard {
+    background: #fff;
+    border-radius: 1.2rem;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+}
+
+.qcard h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.opt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 1.6rem;
+    padding: 1rem 1.4rem;
+    margin-bottom: .9rem;
+    border: 3px solid var(--moss);
+    border-radius: .9rem;
+    background: var(--mist);
+    color: var(--deep);
+}
+
+.opt:hover:not(:disabled) {
+    background: #d6e8cd;
+}
+
+.opt b {
+    display: inline-block;
+    width: 2.2rem;
+}
+
+.opt.right {
+    background: #2e9e4f;
+    border-color: #2e9e4f;
+    color: #fff;
+}
+
+.opt.wrong {
+    background: #c0392b;
+    border-color: #c0392b;
+    color: #fff;
+}
+
+.opt:disabled {
+    opacity: 1;
+}
+
+.bar {
+    height: 14px;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    background: var(--sun);
+    transition: width .3s;
+}
+
+.score {
+    font-size: 6rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    color: var(--moss);
+}

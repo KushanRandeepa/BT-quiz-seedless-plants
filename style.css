@@ -1,0 +1,250 @@
+  :root {
+      --moss: #2e713e;
+      --deep: #12261a;
+      --fern: #7bb661;
+      --bark: #8a5a2b;
+      --mist: #eaf3e4;
+      --sun: #f6c744;
+  }
+
+  html {
+      scroll-snap-type: y proximity;
+      scroll-behavior: smooth;
+  }
+
+  body {
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--deep);
+      font-size: 1.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .brand,
+  .modal-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+  }
+
+  .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      background: rgba(18, 38, 26, .92);
+      padding: .6rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .topbar a {
+      color: #d5e9cc;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-left: 1.2rem;
+  }
+
+  .topbar a:hover,
+  .topbar .brand {
+      color: #fff;
+  }
+
+  .slide {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      padding: 6rem 0 3rem;
+  }
+
+  .s-dark {
+      background: linear-gradient(160deg, var(--deep), var(--moss));
+      color: #fff;
+  }
+
+  .s-light {
+      background: var(--mist);
+  }
+
+  .s-white {
+      background: #fff;
+  }
+
+  .slide h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1.05;
+  }
+
+  .slide h2 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+  }
+
+  .slide h3 {
+      font-size: 2.2rem;
+  }
+
+  .big li {
+      margin-bottom: .8rem;
+  }
+
+  .pill {
+      display: inline-block;
+      background: var(--sun);
+      color: var(--deep);
+      border-radius: 2rem;
+      padding: .2rem 1.2rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+  }
+
+  .lin {
+      border-radius: 1rem;
+      padding: 2rem;
+      height: 100%;
+      color: #fff;
+  }
+
+  .lin.a {
+      background: var(--moss);
+  }
+
+  .lin.b {
+      background: var(--bark);
+  }
+
+  .lin .ic {
+      font-size: 4rem;
+  }
+
+  .trait {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      height: 100%;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+  }
+
+  .s-white .trait {
+      background: var(--mist);
+  }
+
+  .trait .ic {
+      font-size: 5rem;
+  }
+
+  .ex-card {
+      cursor: pointer;
+      border: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .15);
+      width: 100%;
+      text-align: center;
+      transition: transform .15s;
+      color: var(--deep);
+  }
+
+  .ex-card:hover,
+  .ex-card:focus-visible {
+      transform: translateY(-6px);
+      outline: 4px solid var(--sun);
+  }
+
+  .ex-card .t {
+      background: var(--mist);
+      padding: 1rem;
+  }
+
+  .ex-card .n {
+      font-family: 'Fraunces', serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      padding: .8rem .5rem .2rem;
+  }
+
+  .ex-card .g {
+      padding: 0 .5rem 1rem;
+      font-size: 1.2rem;
+      color: #555;
+  }
+
+  .modal-content {
+      font-size: 1.5rem;
+  }
+
+  .modal-title {
+      font-size: 2.6rem;
+  }
+
+  .nav-pills .nav-link {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--moss);
+  }
+
+  .nav-pills .nav-link.active {
+      background: var(--moss);
+      color: #fff;
+  }
+
+  .cycle {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .step {
+      background: var(--mist);
+      border: 3px solid var(--fern);
+      border-radius: 1rem;
+      padding: 1rem 1.2rem;
+      width: 230px;
+      text-align: center;
+      font-size: 1.3rem;
+  }
+
+  .step b {
+      display: block;
+      font-size: 2.4rem;
+  }
+
+  .arrow {
+      font-size: 3rem;
+      color: var(--bark);
+  }
+
+  .step.hap {
+      background: #fff4d1;
+      border-color: var(--sun);
+  }
+
+  .photo-slot {
+      border: 3px dashed var(--moss);
+      border-radius: 1rem;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+      background: var(--mist);
+      overflow: hidden;
+  }
+
+  .photo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  
+  
