@@ -1,3 +1,36 @@
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
+import { 
+    getAuth,
+    signInAnonymously
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAd6Byms7jELtbQq8sDaRO5Lmu-noDOb6s",
+  authDomain: "bt-quiz-4749d.firebaseapp.com",
+  projectId: "bt-quiz-4749d",
+  storageBucket: "bt-quiz-4749d.firebasestorage.app",
+  messagingSenderId: "1086038321545",
+  appId: "1:1086038321545:web:7f043f72162c3ea5089958",
+  measurementId: "G-F12RPVH28T"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+
+await signInAnonymously(auth);
+
+console.log("Signed in anonymously as:", auth.currentUser.uid);
+
 const Q = [
   {
     "q": "Which of the following is NOT produced by seedless vascular plants?",
@@ -93,6 +126,7 @@ const Q = [
 
 let i = 0, score = 0;
 const card = document.getElementById('card');
+
 function show() {
     const q = Q[i];
     counter.textContent = `Question ${i + 1} of ${Q.length}`; scoreLive.textContent = `Score: ${score}`;
@@ -111,10 +145,48 @@ function pick(k) {
     document.getElementById('next').onclick = () => { i++; i < Q.length ? show() : end(); };
 }
 
-function end() {
-    prog.style.width = '100%'; counter.textContent = 'Finished';
-    const msg = score >= 7 ? 'Excellent!' : score >= 5 ? 'Good job!' : 'Keep revising!';
-    card.innerHTML = `<div class="text-center"><h2>${msg}</h2><div class="score">${score} /
-     ${Q.length}</div><button class="btn btn-success btn-lg fs-4 me-2" onclick="i=0;score=0;show()">Try again</button><a class="btn btn-outline-success btn-lg fs-4" href="index.html">Back to slides</a></div>`;
+async function end() {
+    prog.style.width = '100%';
+    counter.textContent = 'Finished';
+
+    const msg = score >= 7
+        ? 'Excellent!'
+        : score >= 5
+        ? 'Good job!'
+        : 'Keep revising!';
+
+    const percentage = Math.round(score / Q.length * 100);
+
+    card.innerHTML = `
+        <div class="text-center">
+            <h2>${msg}</h2>
+            <div class="score">${score} / ${Q.length}</div>
+
+            <button class="btn btn-success btn-lg fs-4 me-2" id="retry">
+                Try again
+            </button>
+
+            <a class="btn btn-outline-success btn-lg fs-4" href="index.html">
+                Back to slides
+            </a>
+        </div>
+    `;
+
+    await addDoc(collection(db, "quizResults"), {
+        uid: auth.currentUser.uid,
+        score: score,
+        total: Q.length,
+        percentage: percentage,
+        submittedAt: serverTimestamp()
+    });
+
+    document.getElementById('retry').onclick = () => {
+        i = 0;
+        score = 0;
+        show();
+    };
 }
+
 show();
+
+
