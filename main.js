@@ -150,6 +150,7 @@ let i = 0, score = 0;
 const card = document.getElementById('card');
 
 function show() {
+startTimer();
     const q = Q[i];
     counter.textContent = `Question ${i + 1} of ${Q.length}`; scoreLive.textContent = `Score: ${score}`;
     prog.style.width = (i / Q.length * 100) + '%';
@@ -210,6 +211,28 @@ Go Back Home
     };
 }
 
+
+let timeLeft = 30;
+let timer;
+
+function startTimer() {
+    clearInterval(timer);
+    timeLeft = 30;
+
+    document.getElementById("timer").textContent = timeLeft;
+
+    timer = setInterval(function () {
+        timeLeft--;
+
+        document.getElementById("timer").textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            }
+    }, 1000);
+}
+
+// Make function accessible to inline HTML onclick
+window.startTimer = startTimer;
+
 show();
-
-
