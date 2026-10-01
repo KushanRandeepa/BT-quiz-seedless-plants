@@ -102,3 +102,9 @@ h2,
     font-weight: 900;
     color: var(--moss);
 }
+.percentage{
+    font-size: 6rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    color: var(--sun);
+}

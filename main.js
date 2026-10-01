@@ -161,13 +161,16 @@ async function end() {
         <div class="text-center">
             <h2>${msg}</h2>
             <div class="score">${score} / ${Q.length}</div>
+            <div class="percentage">${percentage}%</div>
+<div class="d-flex flex-wrap gap-2">
+    <a class="btn btn-outline-success btn-lg fs-4" href="index.html">
+        Try again
+    </a>
 
-            <button class="btn btn-success btn-lg fs-4 me-2" id="retry">
-                Try again
-            </button>
-
-            <a class="btn btn-outline-success btn-lg fs-4" href="index.html">
-                Back to slides
+    <button class="btn btn-success btn-lg fs-4" id="retry">
+        Try again
+    </button>
+</div>
             </a>
         </div>
     `;
