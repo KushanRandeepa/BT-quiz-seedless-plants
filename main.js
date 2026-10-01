@@ -32,28 +32,7 @@ await signInAnonymously(auth);
 console.log("Signed in anonymously as:", auth.currentUser.uid);
 
 const Q = [
-  {
-    "q": "Which of the following is NOT produced by seedless vascular plants?",
-    "o": [
-      "Spores",
-      "Vascular tissues",
-      "Seeds",
-      "True roots"
-    ],
-    "a": 2,
-    "e": "As their name suggests, seedless vascular plants reproduce by spores and do not produce seeds, flowers, or fruits[cite: 1]."
-  },
-  {
-    "q": "Which characteristic distinguishes lycophytes from monilophytes regarding their leaves?",
-    "o": [
-      "Lycophytes have megaphylls with branched veins.",
-      "Lycophytes have microphylls with one unbranched vein.",
-      "Monilophytes completely lack true leaves.",
-      "Monilophytes have microphylls that form coiled fiddleheads."
-    ],
-    "a": 1,
-    "e": "Lycophytes possess microphylls with a single unbranched vein, whereas monilophytes have megaphylls with branched veins[cite: 1]."
-  },
+ 
   {
     "q": "How does the spore production of Selaginella differ from most monilophytes?",
     "o": [
@@ -64,17 +43,6 @@ const Q = [
     ],
     "a": 2,
     "e": "Selaginella is heterosporous, meaning it produces two different sizes of spores: microspores and megaspores[cite: 1]."
-  },
-  {
-    "q": "Why is water a crucial requirement for the reproduction of seedless vascular plants?",
-    "o": [
-      "Water is needed to disperse the seeds to new environments.",
-      "Flagellated sperm require water to swim to the egg for fertilization.",
-      "Water protects the developing sporophyte from predators.",
-      "Spores can only germinate while fully submerged in water."
-    ],
-    "a": 1,
-    "e": "Both lycophytes and monilophytes possess flagellated sperm that must swim through a film of water to reach and fertilize the egg[cite: 1]."
   },
   {
     "q": "In the life cycle of a typical fern like Nephrolepis, what is the function of the prothallus?",
@@ -110,15 +78,69 @@ const Q = [
     "e": "Equisetum, a type of monilophyte, is characterized by its jointed, hollow stems, whorled branches, and a terminal cone[cite: 1]."
   },
   {
-    "q": "Where are the sporangia typically located on a mature fern sporophyte?",
+    "q": "Which phylum is more evolutionary closer to the seed plants?",
     "o": [
-      "Inside a terminal strobilus at the top of the stem.",
-      "Clustered in structures called sori under the fronds.",
-      "Within the tissues of the true roots.",
-      "Embedded in the upper surface of microphylls."
+      "Phylum Cycadophyta",
+      "Phylum Lycophyta",
+      "Phylum Monilophyta",
+      "Phylum Hepatophyta"
+    ],
+    "a": 2,
+    "e": "Monilophytes (ferns, horsetails, and whisk ferns) form a clade that is the sister group to seed plants, meaning they share a more recent common ancestor with seed plants than Lycophytes do."
+  },
+  {
+    "q": "Which is a club moss?",
+    "o": [
+      "Azolla sp.",
+      "Lycopodium",
+      "Equisetum",
+      "Dryopteria"
     ],
     "a": 1,
-    "e": "In typical ferns like Nephrolepis or Dryopteris, sporangia are grouped together in clusters known as sori on the underside of the fronds[cite: 1]."
+    "e": "Lycopodium is the primary genus of clubmosses, belonging to the phylum Lycopodiophyta. Azolla and Dryopteris are ferns, and Equisetum is a horsetail."
+  },
+  {
+    "q": "Which is protected by indusium?",
+    "o": [
+      "Roots",
+      "Sporangium",
+      "Microphylls",
+      "Strobilus"
+    ],
+    "a": 1,
+    "e": "An indusium is a thin, membranous outgrowth of a fern leaf that covers and protects the developing sporangia (which are usually clustered in a sorus)."
+  },
+  {
+    "q": "What is the difference between Monilophyta & Pterophyta?",
+    "o": [
+      "Monilophyta is a sub group of Pterophyta",
+      "Pterophytes includes all kinds of ferns",
+      "Monilophyta includes only true ferns",
+      "Pterophyta is a sub group of Monilophyta."
+    ],
+    "a": 3,
+    "e": "In modern plant taxonomy, Monilophyta is a broad clade that encompasses true ferns, whisk ferns, and horsetails. Pterophyta (often synonymous with just true ferns) is considered a subgroup nested within the broader Monilophyta classification."
+  },{
+    "q": "What is the function of stolons in Nephrolepis?[cite: 3]",
+    "o": [
+      "Absorption of water and mineral salts[cite: 3]",
+      "Vegetative propagation and spreading of the plant[cite: 3]",
+      "Production of spores for sexual reproduction[cite: 3]",
+      "Photosynthesis and gaseous exchange[cite: 3]"
+    ],
+    "a": 1,
+    "e": "In Nephrolepis, stolons are specialized runner stems that allow for vegetative propagation and the spreading of the plant.[cite: 3]"
+  },
+ {
+    "q": "Which of the following characteristics is intrinsically linked to the heterosporous life cycle seen in seedless vascular plants like Selaginella?",
+    "o": [
+      "Archegonia and antheridia are produced on the same free-living prothallus.",
+      "Gametophyte development is primarily endosporic, occurring largely within the confines of the spore wall.",
+      "The dominant phase of the life cycle shifts back to a nutritionally independent gametophyte.",
+      "Sporangia are organized into sori located on the abaxial surface of megaphylls."
+    ],
+    "a": 1,
+    "e": "In heterosporous plants like Selaginella, the highly reduced male and female gametophytes develop endosporically, meaning they grow and mature almost entirely within the protective wall of the microspore or megaspore. Homosporous ferns, by contrast, typically produce exosporic, free-living gametophytes."
   }
 ]
 
@@ -166,12 +188,10 @@ async function end() {
     <a class="btn btn-outline-success btn-lg fs-4" href="index.html">
         Try again
     </a>
-
     <button class="btn btn-success btn-lg fs-4" id="retry">
-        Try again
+Go Back Home
     </button>
 </div>
-            </a>
         </div>
     `;
 
